@@ -1,0 +1,117 @@
+@PointClass size(-16 -16 0, 16 16 32) color(240 64 2) studio("models/deployable_sentry.mdl") = monster_sentry_mk2 : "Sentry MkII"
+[
+	spawnflags(Flags) =
+	[
+		32 : "Start when damaged" : 0
+		64 : "Do not auto-start" : 0
+		128 : "Allow disarming" : 0
+		256: "Ignore Line of Sight" : 0
+	]
+	
+	targetname(target_source) : "Name"
+	health(integer) : "Custom Health"
+	
+	classify(choices) : "Classification" : 0 =
+	[
+		-1 : "None"
+		0 : "Object Default"
+		1 : "Machine"
+		2 : "Player"
+		3 : "Human Passive"
+		4 : "Human Military"
+		5 : "Alien Military"
+		6 : "Alien Passive"
+		7 : "Alien Monster"
+		8 : "Alien Prey"
+		9 : "Alien Predator"
+		10 : "Insect"
+		11 : "Player Ally"
+		12 : "Player Hornet/Snark"
+		13 : "Alien Hornet/Snark"
+		14 : "X-Race"
+		15 : "X-Race: Shocktrooper/Voltigore"
+		16 : "Team 1"
+		17 : "Team 2"
+		18 : "Team 3"
+		19 : "Team 4"
+	]
+	
+	displayname(string) : "In-game Name" : ""
+	attackrange(integer) : "Max Attack Range" : 1200
+	
+	renderfx(choices) : "Render FX" : 0 =
+	[
+		0: "Normal"
+		1: "Slow Pulse"
+		2: "Fast Pulse"
+		3: "Slow Wide Pulse"
+		4: "Fast Wide Pulse"
+		9: "Slow Strobe"
+		10: "Fast Strobe"
+		11: "Faster Strobe"
+		12: "Slow Flicker"
+		13: "Fast Flicker"
+		5: "Slow Fade Away"
+		6: "Fast Fade Away"
+		7: "Slow Become Solid"
+		8: "Fast Become Solid"
+		14: "Constant Glow"
+		15: "Distort"
+		16: "Hologram (Distort + fade)"
+		19: "Glow Shell"
+	]
+	
+	rendermode(choices) : "Render Mode" : 0 =
+	[
+		0: "Normal"
+		1: "Color"
+		2: "Texture"
+		3: "Glow"
+		4: "Solid"
+		5: "Additive"
+	]
+	
+	renderamt(integer) : "FX Amount (1 - 255)"
+	rendercolor(color255) : "FX Color (R G B)" : "0 0 0"
+	
+	weapon(choices) : "Sentry weapon" : 0 =
+	[
+		0: "Random"
+		4: "Crowbar"
+		5: "Pipe Wrench"
+		6: "Medkit"
+		7: "Barnacle Grapple"
+		8: "9mm Glock"
+		9: "357 Python"
+		10: "Uzi"
+		11: "Akimbo Uzis"
+		12: "Desert Eagle"
+		13: "MP5"
+		14: "Shotgun"
+		15: "Crossbow"
+		16: "M16"
+		17: "RPG"
+		18: "Gauss"
+		19: "Gluon Gun"
+		20: "Hornet Gun"
+		21: "Sniper Rifle"
+		22: "M249/SAW"
+		23: "Spore Launcher"
+		24: "Shock Rifle"
+		25: "Displacer"
+		26: "Minigun"
+	]
+	
+	is_player_ally(Choices) : "Is Player Ally?" : 0 =
+	[
+		0 : "No (Default)"
+		1 : "Yes"
+	]
+	
+	TriggerCondition(Choices) : "Trigger on death?" : 0 =
+	[
+		0 : "No"
+		4 : "Yes"
+	]
+	TriggerTarget(String) : "Death Trigger Target"
+]
