@@ -1,6 +1,6 @@
 ## Sentry Mk. II
 
-This script adds a new monster: A red colored sentry on which you can attach any weapon of your choice.
+This script adds a new monster: A colored sentry on which you can attach any weapon of your choice.
 
 To install, download the .as file and copy to **svencoop_addon/scripts/maps**. Then add "map_script sentryMK2.as" to the end of your map cfg to enable this.
 
