@@ -111,6 +111,7 @@ class CSentryMK2 : ScriptBaseMonsterEntity
 	CSprite@ m_pSprite; // "cloud" sprite used when egon hits something it can hurt
 	CSentryTongue@ m_pTip; // "tip" of grapple tongue
 	
+	// beware, if spawned from a squadmaker, the owner will be the squadmaker instead of a player
 	EHandle m_hPlayerOwner; // owner of this sentry (player)
 	
 	// Initialize the turret
@@ -154,6 +155,7 @@ class CSentryMK2 : ScriptBaseMonsterEntity
 			// save player owner if it exists
 			if ( self.pev.owner !is null )
 			{
+				self.pev.colormap = self.pev.owner.vars.colormap; // pass player's color to sentry
 				m_hPlayerOwner = g_EntityFuncs.Instance( self.pev.owner );
 				@self.pev.owner = null; // to keep collisions going
 			}

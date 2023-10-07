@@ -102,16 +102,35 @@
 		26: "Minigun"
 	]
 	
-	is_player_ally(Choices) : "Is Player Ally?" : 0 =
+	// This keyvalue customizes the color of sentry. Default color is FULL red.
+	// "colormap" is the sum of both "topcolor" and "bottomcolor" attributes.
+	
+	// If both topcolor and bottomcolor are equal, the whole sentry will be painted in a single color.
+	// If they aren't equal, the sentry is colored A with touches of color B.
+	
+	// The easiest way to find a color is to open deployable_sentry.mdl in a model viewer, and
+	// examine the "dm_base.bmp" texture - adjust the top/bottomcolor values to your liking.
+	// The final number is your colormap value that you pass to this keyvalue.
+	
+	// Alternatively just use default helmet playermodel in a listen server, and turn on third person.
+	// Adjust topcolor and bottomcolor to your liking.
+	// Colormap is [(bottomcolor * 256) + topcolor]. Pass this number to the keyvalue.
+	
+	// Keep in mind that if a player spawns a sentry (such as outer's player sentries) the sentry
+	// colormap will be copied from the player. If you intend to change the color of one or all
+	// player sentries, you must trigger_changevalue them after they spawn.
+	colormap(integer) : "[Expert] Sentry Colormap" : 0
+	
+	is_player_ally(choices) : "Is Player Ally?" : 0 =
 	[
 		0 : "No (Default)"
 		1 : "Yes"
 	]
 	
-	TriggerCondition(Choices) : "Trigger on death?" : 0 =
+	TriggerCondition(choices) : "Trigger on death?" : 0 =
 	[
 		0 : "No"
 		4 : "Yes"
 	]
-	TriggerTarget(String) : "Death Trigger Target"
+	TriggerTarget(string) : "Death Trigger Target"
 ]
